@@ -2,11 +2,10 @@
   "compatibleVersion": 3,
   "bundleVersion": 1,
   "identifier": "com.lukefinch.rename-it",
-  "repository": "https://github.com/LukeFinch/QuickStyles",
   "icon": "icon.png",
   "commands": [
     {
-      "name": "Create of each colour",
+      "name": "Create text of each colour",
       "identifier": "my-command-identifier",
       "script": "my-command.js"
     }
@@ -17,7 +16,7 @@
       "my-command-identifier"
     ]
   },
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Quickly make more text layers from a selection of different fonts and colours.",
   "name": "QuickStyles",
   "disableCocoaScriptPreprocessor": true,

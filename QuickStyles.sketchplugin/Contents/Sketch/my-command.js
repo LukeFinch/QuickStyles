@@ -370,7 +370,7 @@ if (sel == 0) {
     var addTextLayer = function addTextLayer(target, label, font, colour, i, j) {
         var textLayer = MSTextLayer["new"]();
         console.log(textLayer);
-        textLayer.setStringValue("The Sun, example text");
+        textLayer.setStringValue("Example text, im a pretty unicorn");
         textLayer.setName(label);
         textLayer.setFont(font);
         textLayer.setTextColor(colour);
