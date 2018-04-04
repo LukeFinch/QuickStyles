@@ -3,12 +3,11 @@
   "description": "Quickly make more text layers from a selection of different fonts and colours.",
   "author": "Luke Finch",
   "identifier": "com.lukefinch.quickstyles",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/lukefinch/quickstyles"
   },
-
   "skpm": {
     "name": "QuickStyles",
     "manifest": "src/manifest.json",
