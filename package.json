@@ -1,13 +1,18 @@
 {
-  "name": "quickstyles",
+  "name": "QuickStyles",
+  "description": "Quickly make more text layers from a selection of different fonts and colours.",
+  "author": "Luke Finch",
+  "identifier": "com.lukefinch.quickstyles",
   "version": "0.1.0",
-  "engines": {
-    "sketch": ">=3.0"
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/lukefinch/quickstyles"
   },
+
   "skpm": {
     "name": "QuickStyles",
     "manifest": "src/manifest.json",
-    "main": "plugin.sketchplugin",
+    "main": "QuickStyles.sketchplugin",
     "assets": [
       "assets/**/*"
     ]
@@ -20,5 +25,8 @@
   },
   "devDependencies": {
     "@skpm/builder": "^0.4.0"
+  },
+  "dependencies": {
+    "skpm": "^1.0.14"
   }
 }

@@ -8,7 +8,7 @@
     {
       "name": "Create of each colour",
       "identifier": "my-command-identifier",
-      "script": "./my-command.js"
+      "script": "my-command.js"
     }
   ],
   "menu": {
@@ -16,5 +16,11 @@
     "items": [
       "my-command-identifier"
     ]
-  }
+  },
+  "version": "0.1.0",
+  "description": "Quickly make more text layers from a selection of different fonts and colours.",
+  "name": "QuickStyles",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com/lukefinch/quickstyles/master/.appcast.xml",
+  "author": "Luke Finch"
 }
