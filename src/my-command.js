@@ -1,6 +1,5 @@
 sketch = context.api()
 doc = context.document;
-sel = context.selection;
 currentPage = doc.currentPage();
 font = [];
 colours = [];
@@ -16,7 +15,7 @@ function addArtboard(page, name) {
     return artboard;
 }
 
-if(sel == 0){doc.showMessage('You need to select some text and colours!')}
+if(context.api().selectedDocument.selectedLayers.length == 0){context.document.showMessage('You need to select some text and colours!')}
 else{
 var board = new addArtboard(currentPage, "Quick Text Styles")
 
@@ -36,20 +35,38 @@ function addTextLayer (target, label, font, colour,i, j) {
     return textLayer;
   };
 
+
+
 context.api().selectedDocument.selectedLayers.iterate(layer => {
 
-if(layer['_object'].isKindOfClass(MSTextLayer)){
-            font.push({
-            "font": layer['_object'].font(),
-            "text": layer['_object'].name(),
-            }
-            )}
-if(layer['_object'].isKindOfClass(MSShapeGroup)){
+
+  //If the selection contains groups, this **should** loop through them, hopefully.
+
+if(layer['_object'].isKindOfClass(MSLayerGroup)){
+  for(var child = 0; child < layer['_object'].children().length; child++){
+
+    pushLayer(layer['_object'].children()[child])
+  }
+}
+else(pushLayer(layer['_object']))
+
+
+function pushLayer(l){
+
+if(l.isKindOfClass(MSTextLayer)){
+  font.push({
+  "font": l.font(),
+  "text": l.name(),
+})
+}
+if(l.isKindOfClass(MSShapeGroup)){
             colours.push({
-                "colour":layer['_object'].style().fills()[0].color(),
-                "name":layer['_object'].name(),
+                "colour":l.style().fills()[0].color(),
+                "name":l.name(),
                 }
             )}
+}
+
 })
 
 for(var i = 0; i < colours.length; i++){
@@ -57,5 +74,4 @@ for(var j = 0; j < font.length; j++){
 addTextLayer(board, font[j].text + "/" + colours[i].name, font[j].font, colours[i].colour, i, j)
 }}
 board.resizeToFitChildren();
-
 } //end of else
